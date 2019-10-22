@@ -1,10 +1,15 @@
+#GSH -GUI openSSH interface - version 1.0 as of October 22, 2019. Written and maintained by Joe Diamond.
+#Contact him at jdiamond_11@comcast.net or at the github repo: https://gihub.com/joebass85/GSH
 import tkinter as tki
-import subprocess
+from subprocess import Popen
+import pyautogui as pyag
+from time import sleep
 #variable creation
 name = ''
 ip = ''
 port = ''
 key = ''
+term = ''
 #environment variables
 master = tki.Tk()
 master.title("GSH Program - gui ssh in Python")
@@ -46,26 +51,43 @@ keyEnt.grid(row=1,column=1)
 def key_get():
      global key
      key = keyEnt.get()
+#terminal name textbox
+term = tki.Label(master, text="Terminal Name:")
+term.grid(row=2,column=0)
+#terminal name entry-box
+termEnt = tki.Entry(master)
+termEnt.grid(row=2,column=1)
+def term_get():
+     global term
+     term = termEnt.get()
 def mainfunc ():
     if key != '' and port != '':
-		    sshcom = "ssh " + name + "@" + ip + " -p " + port + " -i " + key
-		    process = subprocess.run(sshcom.split())
+		    Popen([term])
+		    sleep(3)
+		    pyag.typewrite("ssh " + name + "@" + ip + " -p " + port + " -i " + key)
+		    pyag.press("return")
     if key != '' and port == '':
-		    sshcom = "ssh " + name + "@" + ip + " -i " + key
-		    process = subprocess.run(sshcom.split())
+		    Popen([term])
+		    sleep(3)
+		    pyag.typewrite("ssh " + name + "@" + ip + " -i " + key)
+		    pyag.press("return")
     if port != '' and key == '':
-		    sshcom = "ssh " + name + "@" + ip + " -p " + port
-		    process = subprocess.run(sshcom.split())
+		    Popen([term])
+		    sleep(3)
+		    pyag.typewrite("ssh " + name + "@" + ip + " -p " + port)
+		    pyag.press("return")
     if port == '' and key == '':
-		    sshcom = "ssh " + name + "@" + ip
-		    process = subprocess.run(sshcom.split())
+		    Popen([term])
+		    sleep(3)
+		    pyag.typewrite("ssh " + name + "@" + ip)
+		    pyag.press("return")
 #Buttons to launch or cancel ssh command
 def yes ():
-    print("Launching ssh...")
     name_get()
     IP_get()
     port_get()
     key_get()
+    term_get()
     master.destroy()
     mainfunc()
 def no ():
