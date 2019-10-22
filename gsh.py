@@ -25,7 +25,7 @@ def name_get():
 username = tki.Label(master, text="Username:")
 username.grid(row=0, column=0)
 #Destination IP label
-dest = tki.Label(master, text="Destination IP:")
+dest = tki.Label(master, text="Destination:")
 dest.grid(row=0, column=3)
 #Destination IP entry-box
 destEnt = tki.Entry(master)
