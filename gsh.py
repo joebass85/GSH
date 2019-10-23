@@ -14,7 +14,7 @@ term = ''
 master = tki.Tk()
 master.title("GSH Program - gui ssh in Python")
 master.resizable(False,False)
-master.geometry('600x100')
+master.geometry('600x125')
 #username entry-box
 ent = tki.Entry(master)
 ent.grid(row=0, column=1)
@@ -22,10 +22,10 @@ def name_get():
     global name
     name = ent.get()
 #username label
-username = tki.Label(master, text="Username:")
+username = tki.Label(master, text="Username:", font=("Arial",12))
 username.grid(row=0, column=0)
 #Destination IP label
-dest = tki.Label(master, text="Destination:")
+dest = tki.Label(master, text="Destination:",font=("Arial",12))
 dest.grid(row=0, column=3)
 #Destination IP entry-box
 destEnt = tki.Entry(master)
@@ -34,7 +34,7 @@ def IP_get():
     global ip
     ip = destEnt.get()
 #Port nuber label
-ports = tki.Label(master, text="Port:")
+ports = tki.Label(master, text="Port:", font=("Arial",12))
 ports.grid(row=1, column=3)
 #Port number entry-box
 portEnt = tki.Entry(master)
@@ -43,7 +43,7 @@ def port_get():
      global port
      port = portEnt.get()
 #ssh key location textbox
-key = tki.Label(master, text="Key Location:")
+key = tki.Label(master, text="Key Location:", font=("Arial",12))
 key.grid(row=1,column=0)
 #ssh key entry-box
 keyEnt = tki.Entry(master)
@@ -52,7 +52,7 @@ def key_get():
      global key
      key = keyEnt.get()
 #terminal name textbox
-term = tki.Label(master, text="Terminal Name:")
+term = tki.Label(master, text="Terminal Name:", font=("Arial",12))
 term.grid(row=2,column=0)
 #terminal name entry-box
 termEnt = tki.Entry(master)
@@ -93,9 +93,9 @@ def yes ():
 def no ():
     print("Exiting without launching...")
     master.destroy()
-launch = tki.Button(master,text="Launch ssh",command=yes)
+launch = tki.Button(master,text="Launch ssh",command=yes, font=("Arial",12))
 launch.grid(row=3,column=1)
-cancel = tki.Button(master,text="Cancel",command=no)
+cancel = tki.Button(master,text="Cancel",command=no, font=("Arial",12))
 cancel.grid(row=3, column=4)
 #Run everything with the below:
 master.mainloop()
