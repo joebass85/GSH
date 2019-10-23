@@ -12,7 +12,7 @@ key = ''
 term = ''
 #environment variables
 master = tki.Tk()
-master.title("GSH Program - gui ssh in Python")
+master.title("GSH Program - GUI ssh in Python")
 master.resizable(False,False)
 master.geometry('600x125')
 #username entry-box
