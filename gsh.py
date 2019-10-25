@@ -91,7 +91,6 @@ def yes ():
     master.destroy()
     mainfunc()
 def no ():
-    print("Exiting without launching...")
     master.destroy()
 launch = tki.Button(master,text="Launch ssh",command=yes, font=("Arial",12))
 launch.grid(row=3,column=1)
