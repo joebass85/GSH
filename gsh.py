@@ -1,4 +1,4 @@
-#GSH -GUI openSSH interface - version 1.0 as of October 22, 2019. Written and maintained by Joe Diamond.
+#GSH -GUI openSSH interface - version 2.0 as of October 27, 2019. Written and maintained by Joe Diamond.
 #Contact him at jdiamond_11@comcast.net or at the github repo: https://gihub.com/joebass85/GSH
 import tkinter as tki
 from subprocess import Popen
@@ -10,6 +10,7 @@ ip = ''
 port = ''
 key = ''
 term = ''
+xf = ''
 #environment variables
 master = tki.Tk()
 master.title("GSH Program - GUI ssh in Python")
@@ -60,27 +61,59 @@ termEnt.grid(row=2,column=1)
 def term_get():
      global term
      term = termEnt.get()
+#X forwarding label
+xford = tki.Label(master,text="X Forwarding:",font=("Arial",12))
+xford.grid(row=2,column=3)
+#X forwarding widget thingy
+xfEnt = tki.Entry(master)
+xfEnt.grid(row=2,column=4)
+def xf_get():
+    global xf
+    xf = xfEnt.get()
+#Main funtion
 def mainfunc ():
-    if key != '' and port != '':
-		    Popen([term])
-		    sleep(3)
-		    pyag.typewrite("ssh " + name + "@" + ip + " -p " + port + " -i " + key)
-		    pyag.press("return")
-    if key != '' and port == '':
-		    Popen([term])
-		    sleep(3)
-		    pyag.typewrite("ssh " + name + "@" + ip + " -i " + key)
-		    pyag.press("return")
-    if port != '' and key == '':
-		    Popen([term])
-		    sleep(3)
-		    pyag.typewrite("ssh " + name + "@" + ip + " -p " + port)
-		    pyag.press("return")
-    if port == '' and key == '':
-		    Popen([term])
-		    sleep(3)
-		    pyag.typewrite("ssh " + name + "@" + ip)
-		    pyag.press("return")
+    if xf != '':
+		    if key != '' and port != '':
+				    Popen([term])
+				    sleep(3)
+				    pyag.typewrite("ssh " + name + "@" + ip + " -p " + port + " -i " + key + " -Y")
+				    pyag.press("return")
+		    if key != '' and port == '':
+				    Popen([term])
+				    sleep(3)
+				    pyag.typewrite("ssh " + name + "@" + ip + " -i " + key + " -Y")
+				    pyag.press("return")
+		    if port != '' and key == '':
+				    Popen([term])
+				    sleep(3)
+				    pyag.typewrite("ssh " + name + "@" + ip + " -p " + port + " -Y")
+				    pyag.press("return")
+		    if port == '' and key == '':
+				    Popen([term])
+				    sleep(3)
+				    pyag.typewrite("ssh " + name + "@" + ip + " -Y")
+				    pyag.press("return")
+    else:
+		    if key != '' and port != '':
+				    Popen([term])
+				    sleep(3)
+				    pyag.typewrite("ssh " + name + "@" + ip + " -p " + port + " -i " + key + " -x")
+				    pyag.press("return")
+		    if key != '' and port == '':
+				    Popen([term])
+				    sleep(3)
+				    pyag.typewrite("ssh " + name + "@" + ip + " -i " + key + " -x")
+				    pyag.press("return")
+		    if port != '' and key == '':
+				    Popen([term])
+				    sleep(3)
+				    pyag.typewrite("ssh " + name + "@" + ip + " -p " + port + " -x")
+				    pyag.press("return")
+		    if port == '' and key == '':
+				    Popen([term])
+				    sleep(3)
+				    pyag.typewrite("ssh " + name + "@" + ip + " -x")
+				    pyag.press("return")
 #Buttons to launch or cancel ssh command
 def yes ():
     name_get()
@@ -88,6 +121,7 @@ def yes ():
     port_get()
     key_get()
     term_get()
+    xf_get()
     master.destroy()
     mainfunc()
 def no ():
