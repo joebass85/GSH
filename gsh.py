@@ -1,4 +1,4 @@
-#GSH -GUI openSSH interface - version 2.0 as of October 27, 2019. Written and maintained by Joe Diamond.
+#GSH -GUI openSSH interface - version 1.0 as of October 22, 2019. Written and maintained by Joe Diamond.
 #Contact him at jdiamond_11@comcast.net or at the github repo: https://gihub.com/joebass85/GSH
 import tkinter as tki
 from subprocess import Popen
