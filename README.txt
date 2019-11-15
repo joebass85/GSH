@@ -16,4 +16,8 @@ active desktop).
 
 To run the install script, cd into the GSH directory, 
 change the permissions on the setup.sh script to allow it to be executable,
-and then run the command (without quotes) "./setup.sh"
+and then run the command (without quotes) "./setup-arch.sh" or "./setup-ubuntu.sh"
+to install the program.
+
+Note: The scripts are distro-specific, working for any Arch-based or
+Debian/Ubuntu-based distros.
