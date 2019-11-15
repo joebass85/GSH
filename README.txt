@@ -7,10 +7,10 @@ This program depends on:
 ```
 subprocess moduel
 time module
-Tkinter module 
+Tkinter module
 pyautogui module.
 ```
 
-GSH can be run from the terminal with the command (no quotes) "python3 gsh.py", 
-run from a keybinding, or launched from the gsh.sh icon on the Desktop (if you have an 
+GSH can be run from the terminal with the command (no quotes) "python3 gsh.py",
+run from a keybinding, or launched from the gsh.sh icon on the Desktop (if you have an
 active desktop).
