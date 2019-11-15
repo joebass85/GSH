@@ -7,6 +7,8 @@ if [ ! -d ~/Desktop ]; then
     exit
 fi
 
+sudo pacman -S tk python-pip
+sudo pip3 install pyautogui
 pushd ~
 mkdir .gsh
 cp ~/GSH/gsh.py ~/.gsh/gsh.py
