@@ -7,8 +7,11 @@ if [ ! -d ~/Desktop ]; then
     exit
 fi
 
+echo "Installing Dependencies..."
+
 sudo apt install python3-tk python3-pip
 sudo pip3 install pyautogui
+
 pushd ~
 mkdir .gsh
 cp ~/GSH/gsh.py ~/.gsh/gsh.py

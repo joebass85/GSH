@@ -7,6 +7,8 @@ if [ ! -d ~/Desktop ]; then
     exit
 fi
 
+echo "Installing Dependencies..."
+
 sudo pacman -S tk python-pip
 sudo pip3 install pyautogui
 pushd ~
