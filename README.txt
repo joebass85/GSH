@@ -5,7 +5,7 @@ You must provide a password in the terminal, if necessary according to your ssh 
 
 
 This program depends on:
-
+```
   ---------------------
   | subprocess module |
   ---------------------
@@ -15,7 +15,7 @@ This program depends on:
   ---------------------
   | pyautogui module  |
   ---------------------  
-  
+```  
 GSH can be run from the terminal with the command (no quotes) "python3 gsh.py",
 run from a keybinding, or launched from the gsh.sh icon on the Desktop (if you have an
 active desktop).
