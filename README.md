@@ -1,3 +1,4 @@
+# GSH - A GUI ssh frontend
 This is a graphical front-end to the openSSH protocol.
 GSH seeks to provide an easy-to-use graphical user interface for openSSH.
 
