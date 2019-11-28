@@ -5,7 +5,7 @@ GSH seeks to provide an easy-to-use graphical user interface for openSSH.
 You must provide a password in the terminal, if necessary according to your ssh config.
 
 
-This program depends on:
+## This program depends on:
 ```
   ---------------------
   | subprocess module |
