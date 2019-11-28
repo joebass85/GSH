@@ -26,6 +26,6 @@ change the permissions on the setup.sh script to allow it to be executable,
 and then run the command `./setup-arch.sh` or `./setup-ubuntu.sh`
 to install the program.
 
-`Note:`
+### `Note:`
 The scripts are distro-specific, working for any Arch-based or
 Debian/Ubuntu-based distros.
