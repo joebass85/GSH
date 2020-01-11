@@ -15,7 +15,7 @@ xf = ''
 master = tki.Tk()
 master.title("GSH Program - GUI ssh in Python")
 master.resizable(False,False)
-master.geometry('900x165')
+master.geometry('1010x165')
 #username entry-box
 ent = tki.Entry(master, font=("Arial",16))
 ent.grid(row=0, column=1)
@@ -125,10 +125,19 @@ def yes ():
     master.destroy()
     mainfunc()
 def no ():
-    master.destroy()
+	ent.delete(0,"end")
+	destEnt.delete(0,"end")
+	portEnt.delete(0,"end")
+	keyEnt.delete(0,"end")
+	termEnt.delete(0,"end")
+	xfEnt.delete(0,"end")
+def exit_button():
+	master.destroy()
 launch = tki.Button(master,text="Launch ssh",command=yes, font=("Arial",16))
-launch.grid(row=3,column=1)
+launch.grid(row=3,column=0)
 cancel = tki.Button(master,text="Cancel",command=no, font=("Arial",16))
-cancel.grid(row=3, column=4)
+cancel.grid(row=3, column=2)
+exit_butt = tki.Button(master,text="Exit",command=exit_button, font=("Arial",16))
+exit_butt.grid(row=3,column=4)
 #Run everything with the below:
 master.mainloop()
