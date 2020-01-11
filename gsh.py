@@ -1,4 +1,4 @@
-#GSH -GUI openSSH interface - version 1.0 as of October 22, 2019. Written and maintained by Joe Diamond.
+#GSH - GUI openSSH interface - version 1.0 as of October 22, 2019. Written and maintained by Joe Diamond.
 #Contact him at jdiamond_11@comcast.net or at the github repo: https://gihub.com/joebass85/GSH
 import tkinter as tki
 from subprocess import Popen
@@ -15,57 +15,57 @@ xf = ''
 master = tki.Tk()
 master.title("GSH Program - GUI ssh in Python")
 master.resizable(False,False)
-master.geometry('600x125')
+master.geometry('900x165')
 #username entry-box
-ent = tki.Entry(master)
+ent = tki.Entry(master, font=("Arial",16))
 ent.grid(row=0, column=1)
 def name_get():
     global name
     name = ent.get()
 #username label
-username = tki.Label(master, text="Username:", font=("Arial",12))
+username = tki.Label(master, text="Username:", font=("Arial",16))
 username.grid(row=0, column=0)
 #Destination IP label
-dest = tki.Label(master, text="Destination:",font=("Arial",12))
+dest = tki.Label(master, text="Destination:",font=("Arial",16))
 dest.grid(row=0, column=3)
 #Destination IP entry-box
-destEnt = tki.Entry(master)
+destEnt = tki.Entry(master, font=("Arial",16))
 destEnt.grid(row=0, column=4)
 def IP_get():
     global ip
     ip = destEnt.get()
 #Port nuber label
-ports = tki.Label(master, text="Port:", font=("Arial",12))
+ports = tki.Label(master, text="Port:", font=("Arial",16))
 ports.grid(row=1, column=3)
 #Port number entry-box
-portEnt = tki.Entry(master)
+portEnt = tki.Entry(master, font=("Arial",16))
 portEnt.grid(row=1, column=4)
 def port_get():
      global port
      port = portEnt.get()
 #ssh key location textbox
-key = tki.Label(master, text="Key Location:", font=("Arial",12))
+key = tki.Label(master, text="Key Location:", font=("Arial",16))
 key.grid(row=1,column=0)
 #ssh key entry-box
-keyEnt = tki.Entry(master)
+keyEnt = tki.Entry(master, font=("Arial",16))
 keyEnt.grid(row=1,column=1)
 def key_get():
      global key
      key = keyEnt.get()
 #terminal name textbox
-term = tki.Label(master, text="Terminal Name:", font=("Arial",12))
+term = tki.Label(master, text="Terminal Name:", font=("Arial",16))
 term.grid(row=2,column=0)
 #terminal name entry-box
-termEnt = tki.Entry(master)
+termEnt = tki.Entry(master, font=("Arial",16))
 termEnt.grid(row=2,column=1)
 def term_get():
      global term
      term = termEnt.get()
 #X forwarding label
-xford = tki.Label(master,text="X Forwarding:",font=("Arial",12))
+xford = tki.Label(master,text="X Forwarding:",font=("Arial",16))
 xford.grid(row=2,column=3)
 #X forwarding widget thingy
-xfEnt = tki.Entry(master)
+xfEnt = tki.Entry(master, font=("Arial",16))
 xfEnt.grid(row=2,column=4)
 def xf_get():
     global xf
@@ -126,9 +126,9 @@ def yes ():
     mainfunc()
 def no ():
     master.destroy()
-launch = tki.Button(master,text="Launch ssh",command=yes, font=("Arial",12))
+launch = tki.Button(master,text="Launch ssh",command=yes, font=("Arial",16))
 launch.grid(row=3,column=1)
-cancel = tki.Button(master,text="Cancel",command=no, font=("Arial",12))
+cancel = tki.Button(master,text="Cancel",command=no, font=("Arial",16))
 cancel.grid(row=3, column=4)
 #Run everything with the below:
 master.mainloop()
